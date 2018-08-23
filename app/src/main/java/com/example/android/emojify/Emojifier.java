@@ -88,17 +88,17 @@ class Emojifier {
                 + face.getIsRightEyeOpenProbability());
 
         // TODO (3): Create threshold constants for a person smiling, and and eye being open by taking pictures of yourself and your friends and noting the logs.
-        float thresholdSmile = 0.5f;
-        float thresholdLeftEye = 0.5f;
-        float thresholdRightEye = 0.5f;
+        double thresholdSmile = 0.5f;
+        double thresholdLeftEye = 0.5f;
+        double thresholdRightEye = 0.5f;
 
         // TODO (4): Create 3 boolean variables to track the state of the facial expression based on the thresholds you set in the previous step: smiling, left eye closed, right eye closed.
         boolean isSmiling, isLeftEyeOpen, isRightEyeOpen;
 
         // TODO (5): Create an if/else system that selects the appropriate emoji based on the above booleans and log the result.
         isSmiling = face.getIsSmilingProbability() >= thresholdSmile ? true : false;
-        isLeftEyeOpen = face.getIsLeftEyeOpenProbability() >= thresholdSmile ? true : false;
-        isRightEyeOpen = face.getIsRightEyeOpenProbability() >= thresholdSmile ? true : false;
+        isLeftEyeOpen = face.getIsLeftEyeOpenProbability() >= thresholdLeftEye ? true : false;
+        isRightEyeOpen = face.getIsRightEyeOpenProbability() >= thresholdRightEye ? true : false;
 
         Emoji emoji;
 
